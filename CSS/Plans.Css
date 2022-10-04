@@ -112,7 +112,7 @@ html {
     width: 100%;
     background-color: aliceblue;
     z-index: 998;
-    height: 300vh;
+    padding-bottom: 20px;
     }
     .tab-plans .container {
         display: grid;
