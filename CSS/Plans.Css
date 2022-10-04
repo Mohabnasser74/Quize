@@ -358,7 +358,7 @@ html {
 
 @media (max-width:  767px) {
     .container{
-        padding: 0 15px;
+        padding: 0 20px;
 }
     /* .d .container{
         grid-template-columns: repeat(auto-fill, minmax(339px, 1fr));
