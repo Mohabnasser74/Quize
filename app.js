@@ -203,7 +203,7 @@ setTimeout(() => {
         answerContent();
     }, 6000);
 
-    let timeQuestions = setInterval(time, 45274000);
+    let timeQuestions = setInterval(time, 1000);
 
     function time() {
 
