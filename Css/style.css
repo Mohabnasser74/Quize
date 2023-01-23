@@ -71,20 +71,10 @@ button {
     -o-border-radius: 6px;
 }
 
-@media (max-width: 992px) {
-    .quiz-box {
-        font-size: 16px;
-        width: 100%;
-    }
-    button {
-        font-size: 16px;
-    }
-}
-
 
 
 .countdown {
-    padding: 20px;
+    padding: 0 20px;
     background-color: white;
     border-radius: 6px;
     -webkit-border-radius: 6px;
@@ -96,62 +86,13 @@ button {
     align-items: center;
     flex-wrap: wrap;
     gap: 20px;
+    min-height: 64px;
 }
-
 
 
 h1 {
     font-size: 20px;
 }
-
-.fa-battery-empty {
-    font-size: 27px;
-}
-
-
-.box-battery {
-    height: 20px;
-    display: flex;
-    align-items: center;
-    gap: 2px;
-}
-
-.level-battery {
-    font-size: 17px;
-}
-
-.parent-width-charging {
-    position: absolute;
-    width: 63%;
-    height: 7px;
-    margin-bottom: 0.3px;
-    margin-left: 5px;
-}
-
-.width-charging {
-    height: inherit;
-    position: absolute;
-}
-
-
-.battery-charging {
-        background-color: #5cdd62;
-}
-
-.battery-not-charging {
-    background-color: white;
-}
-
-.battery-not-charging-lite {
-    background-color: rgb(0, 0, 0);
-}
-
-.battery {
-    position: relative;
-    display: flex;
-    align-items: center;
-}
-
 
 .answer {
     padding: 20px;
@@ -259,6 +200,8 @@ input, label {
     height: 21px;
     border-radius: 20px;
     background-color: #ededed;
+    display: flex;
+    align-items: center;
 }
 
 .circle {
@@ -269,7 +212,6 @@ input, label {
     background-color: white;
     margin-left: 3px;
     margin-right: 3px;
-    top: 2.5px;
 }
 
 .move-right {
@@ -323,10 +265,30 @@ input, label {
     background-color: #242526db;
 }
 
+.fa-moon {
+    position: absolute;
+    right: 4px;
+    transform: rotate(220deg);
+    -webkit-transform: rotate(225deg);
+    -moz-transform: rotate(220deg);
+    -ms-transform: rotate(220deg);
+    -o-transform: rotate(220deg);
+}
+
+.fa-sun {
+    position: absolute;
+    font-size: 15px;
+    left: 4px;
+    color: #fdd835;
+}
+
+/* bullets */
+
 .box-bullets {
     display: flex;
     gap: 5px;
     flex-wrap: wrap;
+    background-color: transparent;
 }
 
 .active-bullets {
@@ -348,20 +310,86 @@ input, label {
     cursor: pointer;
 }
 
+/* battery */
+
+.fa-battery-empty {
+    font-size: 27px;
+}
+
+
+.box-battery {
+    height: 20px;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+
+.level-battery {
+    font-size: 17px;
+}
+
+.parent-width-charging {
+    position: absolute;
+    width: 63%;
+    height: 7px;
+    margin-bottom: 0.3px;
+    margin-left: 5px;
+}
+
+.width-charging {
+    height: inherit;
+    position: absolute;
+}
+
+
+.battery-charging {
+        background-color: #5cdd62;
+}
+
+.battery-not-charging {
+    background-color: white;
+}
+
+.battery-not-charging-lite {
+    background-color: rgb(0, 0, 0);
+}
+
+.battery {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
 .battery-low {
     background-color: red;
 }
 
+/* responsive */
 .answer, .contain-questions {
     overflow: auto;
 }
 
-@media (max-width: 350px) {
+@media (max-width: 300px) {
     .countdown, .quiz-info, .settings {
     justify-content: center;
     }
+    .countdown {
+        min-height: 64px;
+        padding: 20px;
+    }
 }
 
+@media (max-width: 992px) {
+    .quiz-box {
+        font-size: 16px;
+        width: 100%;
+    }
+    button {
+        font-size: 16px;
+    }
+}
+
+/* scroll */
 ::-webkit-scrollbar {
     width: 15px;
     height: 10px;
@@ -372,4 +400,35 @@ input, label {
     width: 15px;
     height: 10px;
     background-color: #0075ff;
+}
+
+/* start quiz */
+.go {
+    transform: scale(0) ;
+    -webkit-transform: scale(0) ;
+    -moz-transform: scale(0) ;
+    -ms-transform: scale(0) ;
+    -o-transform: scale(0) ;
+    transition-duration: 0.5s;
+}
+
+.go-1{
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transition-duration: 0.5s;
+}
+
+.go-after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    text-align: center;
 }
